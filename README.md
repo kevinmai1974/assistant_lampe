@@ -39,7 +39,7 @@ Le système fonctionne en plusieurs étapes :
 
 ## Prérequis
 
-### Mat�riel
+### Matériel
 
 * Raspberry Pi
 * LED ou lampe connectée au GPIO 17
@@ -54,7 +54,7 @@ Le système fonctionne en plusieurs étapes :
 
 ## Installation
 
-### 1. Installer les d�pendances système
+### 1. Installer les dépendances système
 
 ```bash
 sudo apt update
