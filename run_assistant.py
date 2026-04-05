@@ -46,7 +46,7 @@ def wait_for_status(timeout: float = 10.0) -> dict:
 
     return {
         "intent": "",
-        "result": "Aucune r�ponse du module lampe.",
+        "result": "Aucune reponse du module lampe.",
         "state": "unknown"
     }
 
@@ -58,7 +58,7 @@ def main():
     mqtt_client.client.on_message = on_status_message
     mqtt_client.client.subscribe(MQTT_TOPIC_STATUS)
 
-    speak("Assistant pr�t. Dites assistant pour commencer.")
+    speak("Assistant pret. Dites assistant pour commencer.")
 
     try:
         while True:
@@ -69,10 +69,10 @@ def main():
                 continue
 
             if not detect_hotword(heard_text):
-                print("[HOTWORD] Mot d'activation non d�tect�.")
+                print("[HOTWORD] Mot d'activation non detecte.")
                 continue
 
-            speak("Je vous �coute.")
+            speak("Je vous ecoute.")
 
             command_text = listen_once()
 
@@ -99,7 +99,7 @@ def main():
 
             status = wait_for_status(timeout=10.0)
 
-            result_text = status.get("result", "Aucune r�ponse.")
+            result_text = status.get("result", "Aucune reponse.")
             state_text = status.get("state", "unknown")
 
             speak(result_text)
@@ -108,8 +108,8 @@ def main():
             time.sleep(0.3)
 
     except KeyboardInterrupt:
-        print("\n[ASSISTANT] Arr�t du programme.")
-        speak("Arr�t de l'assistant.")
+        print("\n[ASSISTANT] Arret du programme.")
+        speak("Arret de l'assistant.")
     finally:
         mqtt_client.stop()
 
