@@ -10,7 +10,7 @@ https://github.com/kevinmai1974/assistant_lampe
 
 Ce projet permet de contrôler une lampe connectée à un Raspberry Pi à l'aide de commandes vocales.
 
-Le programme écoute la voix de l'utilisateur, transforme la parole en texte, interprète la commande et envoie un message via MQTT pour allumer ou �teindre la lampe.
+Le programme écoute la voix de l'utilisateur, transforme la parole en texte, interprète la commande et envoie un message via MQTT pour allumer ou éteindre la lampe.
 
 ---
 
