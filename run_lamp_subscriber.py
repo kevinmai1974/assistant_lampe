@@ -16,7 +16,7 @@ lamp = LampController()
 def handle_command(client, userdata, msg):
     try:
         payload = msg.payload.decode("utf-8")
-        print(f"[LAMPE] Message re�u : {payload}")
+        print(f"[LAMPE] Message recu : {payload}")
 
         data = json.loads(payload)
         intent = data.get("intent", "unknown")
@@ -44,7 +44,7 @@ def handle_command(client, userdata, msg):
 
 
 def shutdown_handler(signum, frame):
-    print("\n[LAMPE] Arr�t demand�.")
+    print("\n[LAMPE] Arret demande.")
     lamp.cleanup()
     mqtt_client.stop()
     sys.exit(0)
@@ -58,14 +58,14 @@ def main():
     mqtt_client.client.on_message = handle_command
     mqtt_client.client.subscribe(MQTT_TOPIC_COMMAND)
 
-    print(f"[LAMPE] Abonn� au topic : {MQTT_TOPIC_COMMAND}")
+    print(f"[LAMPE] Abonne au topic : {MQTT_TOPIC_COMMAND}")
     print("[LAMPE] En attente des commandes...")
 
     try:
         while True:
             signal.pause()
     except AttributeError:
-        # Compatibilit� minimale si signal.pause n'existe pas
+        # Compatibilite minimale si signal.pause n'existe pas
         import time
         while True:
             time.sleep(1)
