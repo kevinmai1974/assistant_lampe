@@ -1,4 +1,4 @@
-# Assistant vocal � Lampe intelligente
+# Assistant vocal à Lampe intelligente
 
 ## Lien GitHub
 
@@ -8,41 +8,41 @@ https://github.com/kevinmai1974/assistant_lampe
 
 ## Description
 
-Ce projet permet de contr�ler une lampe connect�e � un Raspberry Pi � l�aide de commandes vocales.
+Ce projet permet de contrôler une lampe connectée à un Raspberry Pi à l'aide de commandes vocales.
 
-Le programme �coute la voix de l�utilisateur, transforme la parole en texte, interpr�te la commande et envoie un message via MQTT pour allumer ou �teindre la lampe.
+Le programme écoute la voix de l'utilisateur, transforme la parole en texte, interprète la commande et envoie un message via MQTT pour allumer ou �teindre la lampe.
 
 ---
 
 ## Fonctionnement
 
-Le syst�me fonctionne en plusieurs �tapes :
+Le système fonctionne en plusieurs étapes :
 
 1. Capture de la voix avec un microphone USB
 2. Conversion de la parole en texte
 3. Analyse de la commande
-4. Envoi d�un message MQTT
-5. Activation du GPIO pour contr�ler la lampe
+4. Envoi d'un message MQTT
+5. Activation du GPIO pour contrôler la lampe
 
 ---
 
 ## Structure du projet
 
-* `audio/` : gestion du son (reconnaissance vocale et synth�se vocale)
-* `core/` : logique principale (interpr�tation, MQTT, outils)
-* `device/` : contr�le du mat�riel (lampe via GPIO)
-* `config.py` : param�tres du projet
-* `run_assistant.py` : lance l�assistant vocal
-* `run_lamp_subscriber.py` : g�re la lampe
+* `audio/` : gestion du son (reconnaissance vocale et synthèse vocale)
+* `core/` : logique principale (interprétation, MQTT, outils)
+* `device/` : contrôle du matériel (lampe via GPIO)
+* `config.py` : paramètres du projet
+* `run_assistant.py` : lance l'assistant vocal
+* `run_lamp_subscriber.py` : gére la lampe
 
 ---
 
-## Pr�requis
+## Prérequis
 
 ### Mat�riel
 
 * Raspberry Pi
-* LED ou lampe connect�e au GPIO 17
+* LED ou lampe connectée au GPIO 17
 * Microphone USB
 
 ### Logiciel
@@ -54,7 +54,7 @@ Le syst�me fonctionne en plusieurs �tapes :
 
 ## Installation
 
-### 1. Installer les d�pendances syst�me
+### 1. Installer les d�pendances système
 
 ```bash
 sudo apt update
@@ -68,7 +68,7 @@ git clone https://github.com/kevinmai1974/assistant_lampe.git
 cd assistant_lampe
 ```
 
-### 3. Cr�er un environnement virtuel
+### 3. Créer un environnement virtuel
 
 ```bash
 python3 -m venv .venv
@@ -85,7 +85,7 @@ pip install -r requirements.txt
 
 ## Lancement
 
-### 1. D�marrer MQTT
+### 1. Démarrer MQTT
 
 ```bash
 sudo systemctl start mosquitto
@@ -97,7 +97,7 @@ sudo systemctl start mosquitto
 python run_lamp_subscriber.py
 ```
 
-### 3. Lancer l�assistant vocal (dans un autre terminal)
+### 3. Lancer l'assistant vocal (dans un autre terminal)
 
 ```bash
 source .venv/bin/activate
@@ -111,14 +111,14 @@ python run_assistant.py
 Dire :
 
 * "assistant"
-* puis "allume la lampe" ou "�teins la lampe"
+* puis "allume la lampe" ou "éteins la lampe"
 
 ---
 
 ## Important
 
-* Le microphone USB est n�cessaire pour utiliser la reconnaissance vocale
-* Sans micro, seule la logique du programme peut �tre test�e
+* Le microphone USB est nécessaire pour utiliser la reconnaissance vocale
+* Sans micro, seule la logique du programme peut être testée
 
 ---
 
