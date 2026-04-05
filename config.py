@@ -1,0 +1,34 @@
+# config.py
+
+HOTWORD = "assistant"
+
+# MQTT
+MQTT_BROKER = "localhost"
+MQTT_PORT = 1883
+MQTT_KEEPALIVE = 60
+
+MQTT_TOPIC_COMMAND = "lampe/commande"
+MQTT_TOPIC_STATUS = "lampe/etat"
+
+# GPIO
+GPIO_PIN = 17
+
+# Logs
+LOG_FILE = "logs/commands.jsonl"
+
+# STT
+LANGUAGE = "fr-FR"
+LISTEN_TIMEOUT = 5
+PHRASE_TIME_LIMIT = 6
+AMBIENT_ADJUST_DURATION = 1
+
+# TTS
+TTS_RATE = 170
+
+# Timings lampe
+BLINK_TIMES = 6
+BLINK_INTERVAL = 0.4
+
+NIGHT_MODE_BLINKS = 4
+NIGHT_MODE_ON_TIME = 0.15
+NIGHT_MODE_OFF_TIME = 0.85

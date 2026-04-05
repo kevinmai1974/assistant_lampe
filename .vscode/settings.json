@@ -1,0 +1,6 @@
+{
+  "python.defaultInterpreterPath": "/home/kevinmai74/assistant_lampe/.venv/bin/python",
+  "python.analysis.extraPaths": [
+    "/home/kevinmai74/assistant_lampe"
+  ]
+}
